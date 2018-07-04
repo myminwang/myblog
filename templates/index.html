@@ -1,4 +1,4 @@
-{% extends "blog/base.html" %}
+{% extends "base.html" %}
 
 {% block content %}
 
@@ -42,22 +42,22 @@
             {% for article in article_list %}
             <li id="New">
                 <div class="arcimg">
-                    <img src="{{ article.picture }}" alt="{{ article.title }}" title="{{ article.title }}"/>
+                    <img src="{{ MEDIA_URL }}{{ article.image }}" alt="{{ article.title }}" title="{{ article.title }}"/>
                 </div>
                 <div class="arc-right">
                     <h4 class="blue-text"><a href="{% url "blog:detail" pk=article.id %}" title="{{ article.title }}">{{ article.title }}</a></h4>
                     <p>{{ article.digest }}</p>
                     <ul>
-                        <li><a title="{{ article.author }}{{ article.date_time }} 发表 "><i
-                                class="el-time"></i> {{ article.date_time }}</a></li>
+                        <li><a title="{{ article.author }}&ensp;{{ article.edit_time }} 发表 ">
+                            <i class="el-time"></i> {{ article.edit_time }}</a></li>
                         <li><a href="#" title="作者： {{ article.author }}"><i
                                 class="el-user"></i>{{ article.author }}</a></li>
-                        <li><a href="#" title="已有 {{ article.comment }} 条评论"><i
-                                class="el-comment"> {{ article.comment }}</i></a>
+                        <li><a href="#" title="已有 {{ article.conment_nums }} 条评论"><i
+                                class="el-comment"> {{ article.conment_nums }}</i></a>
                         </li>
-                        <li><a title="已有 {{ article.view }} 次浏览"><i class="el-eye-open"></i>{{ article.view }}
+                        <li><a title="已有 {{ article.read_nums }} 次浏览"><i class="el-eye-open"></i>{{ article.read_nums }}
                         </a></li>
-                        <li><a href="#" title="查看分类"><i class="el-th-list"></i>{{ article.category }}</a></li>
+                        <li><a href="#" title="查看分类"><i class="el-th-list"></i>{{ article.category.name }}</a></li>
                     </ul>
                 </div>
             </li>
@@ -75,22 +75,23 @@
             {% for article in article_rank %}
             <li id="Hot">
                 <div class="arcimg">
-                    <img src="{{ article.picture }}" alt="{{ article.title }}" title="{{ article.title }}"/>
+                    <img src="{{ MEDIA_URL }}{{ article.image }}" alt="{{ article.title }}" title="{{ article.title }}"/>
                 </div>
                 <div class="arc-right">
-                    <h4 class="blue-text"><a href="{% url "blog:detail" pk=article.id %}" title="{{ article.title }}">{{ article.title }}</a></h4>
+                    <h4 class="blue-text">
+                        <a href="{% url "blog:detail" pk=article.id %}" title="{{ article.title }}">{{ article.title }}</a></h4>
                     <p>{{ article.digest }}</p>
                     <ul>
-                        <li><a title="{{ article.author }}{{ article.date_time }} 发表 "><i
-                                class="el-time"></i> {{ article.date_time }}</a></li>
+                        <li><a title="{{ article.author }}{{ article.edit_time }} 发表 "><i
+                                class="el-time"></i> {{ article.edit_time }}</a></li>
                         <li><a href="#" title="作者： {{ article.author }}"><i
                                 class="el-user"></i>{{ article.author }}</a></li>
-                        <li><a href="#" title="已有 {{ article.comment }} 条评论"><i
-                                class="el-comment"> {{ article.comment }}</i></a>
+                        <li><a href="#" title="已有 {{ article.conment_nums }} 条评论"><i
+                                class="el-comment"> {{ article.conment_nums }}</i></a>
                         </li>
-                        <li><a title="已有 {{ article.view }} 次浏览"><i class="el-eye-open"></i>{{ article.view }}
+                        <li><a title="已有 {{ article.read_nums }} 次浏览"><i class="el-eye-open"></i>{{ article.read_nums }}
                         </a></li>
-                        <li><a href="#" title="查看分类"><i class="el-th-list"></i>{{ article.category }}</a></li>
+                        <li><a href="#" title="查看分类"><i class="el-th-list"></i>{{ article.category.name }}</a></li>
                     </ul>
                 </div>
             </li>

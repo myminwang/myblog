@@ -1,4 +1,4 @@
-{% extends "blog/base.html" %}
+{% extends "base.html" %}
 {% load custom_filter %}
 
 {% block title %}
@@ -16,11 +16,11 @@
                 <li class="event">
                     <input type="radio" name="tl-group" {% if forloop.counter0 == 0 %} checked {% endif %}/>
                     <label></label>
-                    <div class="thumb"><span>{{ article.date_time }}</span></div>
+                    <div class="thumb"><span>{{ article.edit_time }}</span></div>
                     <div class="content-perspective">
                         <div class="content">
                             <div class="content-inner">
-                                <h3><a href="{% url "blog:detail" pk=article.id%}">{{ article.title }}</a></h3>
+                                <h3><a href="{% url "blog:detail" article.id%}">{{ article.title }}</a></h3>
                                 <p>{{ article.digest }}</p>
                             </div>
                         </div>

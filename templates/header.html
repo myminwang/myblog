@@ -24,13 +24,13 @@
             <ul class="orange-text">
                 <li class=""><a href="{% url "blog:index" %}">首页</a></li>
                 <li><a href="{% url "blog:about" %}">关于</a></li>
-                <li><a href="{% url "blog:article" pk=0 %}">博客</a></li>
+                <li><a href="{% url "blog:article" 0 %}">博客</a></li>
                 <li class='drop'>
                     <a href="JavaScript:;">分类<i class='el-chevron-down'></i></a>
                     <div class="drop-nav orange-text ">
                         <ul>
                             {% for category in category_list %}
-                                <li><a href="{% url "blog:article" pk=category.pk %}">{{ category.name }}</a></li>
+                                <li><a href="{% url "blog:article" category.id %}">{{ category.name }}</a></li>
                             {% endfor %}
                         </ul>
                     </div>
@@ -62,7 +62,7 @@
                     <a href="javascrip:;">分类</a>
                     <ul class="mob-dropmenu">
                         {% for category in category_list %}
-                            <li><a href="{% url "blog:article" pk=category.pk %}">{{ category.name }}</a></li>
+                            <li><a href="{% url "blog:article" category.id %}">{{ category.name }}</a></li>
                         {% endfor %}
                     </ul>
                 </li>

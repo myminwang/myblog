@@ -1,4 +1,4 @@
-{% extends "blog/base.html" %}
+{% extends "base.html" %}
 {% load custom_filter %}
 
 {% block title %}
@@ -7,7 +7,7 @@
 
 {% block meta %}
     <meta name="keywords"
-          content="{{ article.title }},{% for tag in article.tag.all %}{{ tag }},{% endfor %}{{ article.category }}"/>
+          content="{{ article.title }},{% for tag in article.tag.all %}{{ tag }},{% endfor %}{{ article.category.name }}"/>
     <meta name="description" content="{{ article.digest|safe }}"/>
 {% endblock %}
 
@@ -34,12 +34,12 @@
             <h3 class="arc-title index-title">{{ article.title }} </h3>
             <div class="post-line bg-color">
                 <ul>
-                    <li><a title="{{ article.author }}发表于{{ article.date_time }}"><i class="el-time"></i>
-                        <time>{{ article.date_time }}</time>
+                    <li><a title="{{ article.author }}发表于{{ article.edit_time }}"><i class="el-time"></i>
+                        <time>{{ article.edit_time }}</time>
                     </a></li>
                     <li><a href="#"><i class="el-user"></i>{{ article.author }}</a></li>
-                    <li><a href="#Coon" title="转到评论"><i class="el-comment"></i>{{ article.comment }}条</a></li>
-                    <li><a title="已有 {{ article.view }} 次浏览"><i class="el-eye-open"></i>{{ article.view }}</a></li>
+                    <li><a href="#Coon" title="转到评论"><i class="el-comment"></i>{{ article.conment_nums }}条</a></li>
+                    <li><a title="已有 {{ article.read_nums }} 次浏览"><i class="el-eye-open"></i>{{ article.read_nums }}</a></li>
                 </ul>
             </div>
 
@@ -92,9 +92,9 @@
             <div class="article_tag">
                 <ul>
                     <li><a href="{% url "blog:article" pk=article.category_id %}"
-                           title="归类：{{ article.category }}">{{ article.category }}</a></li>
+                           title="归类：{{ article.category.name }}">{{ article.category.name }}</a></li>
                     {% for tag in article.tag.all %}
-                        <li><a href="{% url "blog:tag" name=tag.tag_name %}"
+                        <li><a href="{% url "blog:tag" tag.id %}"
                                title="标签：{{ tag.tag_name }} ">{{ tag.tag_name }}</a>&nbsp;</li>
                     {% endfor %}
                 </ul>
@@ -107,12 +107,11 @@
         </article>
 
         <!--评论表单-->
-        {% include "blog/message.html" %}
+        {% include "message.html" %}
 
-
-        <script type="text/javascript" charset="utf-8" src="https://changyan.itc.cn/js/lib/jquery.js"></script>
+            <script type="text/javascript" charset="utf-8" src="https://changyan.itc.cn/js/lib/jquery.js"></script>
         <script type="text/javascript" charset="utf-8"
-                src="https://changyan.sohu.com/js/changyan.labs.https.js?appid=cyt6A5N47"></script>
+                src="https://changyan.sohu.com/js/changyan.labs.https.js?appid=cytzXhLuB"></script>
     </div>
 
 

@@ -13,13 +13,24 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf import settings
+from django.views.static import serve  # 处理静态文件
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
+from django.conf.urls import url
 import xadmin
 
 from blog.views import *
 
 urlpatterns = [
     path('admin/', xadmin.site.urls),
+
     path('',Index.as_view(),name='index'),
+    path('blog/', include(('blog.urls', 'blog'), namespace='blog')),
+
 ]
+
+if settings.DEBUG:
+    #  配置静态文件访问处理
+    urlpatterns.append(url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}))
+    urlpatterns.append(url(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}))
