@@ -1,6 +1,6 @@
 ## Django搭建个人博客
-![py3.6](https://img.shields.io/badge/python-3.6-brightgreen.svg) 
-  [![](https://img.shields.io/badge/django-2.0-brightgreen.svg)]()
+![py3.6](https://img.shields.io/badge/Python-3.6-brightgreen.svg) 
+  [![](https://img.shields.io/badge/Django-2.0-brightgreen.svg)]()
 [![](https://img.shields.io/badge/Powered%20by-@问道编程-blue.svg)](http://www.cnblogs.com/wendaobiancheng/)
 
 使用Django快速搭建博客
@@ -16,10 +16,12 @@
 * 博客文章 `markdown` 渲染，代码高亮
 * 第三方社会化评论系统支持(畅言)
 * 三种皮肤自由切换
+* 全局搜索
 * 阅读排行榜/最新评论
 * 多目标源博文分享
 * 博文归档
 * 友情链接
+* 分享、打赏功能
 
 ### 下载
 ```
