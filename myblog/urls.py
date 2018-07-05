@@ -34,3 +34,9 @@ if settings.DEBUG:
     #  配置静态文件访问处理
     urlpatterns.append(url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}))
     urlpatterns.append(url(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}))
+
+
+# 全局页面配置
+handler403 = 'blog.views.page_not_look'
+handler404 = 'blog.views.page_not_found'
+handler500 = 'blog.views.page_error'

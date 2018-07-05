@@ -188,3 +188,25 @@ class Tagcloud(View):
             'comment_list': comment_list,
             'count': count,
         })
+
+
+def page_not_look(request):
+    """全局403配置"""
+    from django.shortcuts import render_to_response
+    response = render_to_response('403.html',{})
+    response.status_code = 403
+    return response
+
+def page_not_found(request):
+    """全局404配置"""
+    from django.shortcuts import render_to_response
+    response = render_to_response('404.html',{})
+    response.status_code = 404
+    return response
+
+def page_error(request):
+    """全局500配置"""
+    from django.shortcuts import render_to_response
+    response = render_to_response('500.html',{})
+    response.status_code = 500
+    return response
