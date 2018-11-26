@@ -10,6 +10,7 @@
 * MySQL
 
 ### 示例博客：<http://www.mylanbitou.top>
+### 后台搭建教程及常见问题分析（计划中，暂未更新）：<http://www.zxdt.fun/article/p2/0/>
 
 ### 特点
 
