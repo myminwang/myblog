@@ -54,5 +54,5 @@ python manage.py runserver
 
 
 * 求打赏
-<img src='https://github.com/myminwang/myblog/blob/master/doc/image/dashang.gif' width='500' alt='求打赏'/>
+<img src='./doc/image/dashang.gif' width='300' alt='原创不易'/>
 
