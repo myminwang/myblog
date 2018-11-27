@@ -51,3 +51,8 @@ python manage.py runserver
 
 * 文章内容
 ![文章内容](./doc/image/image3.png)
+
+
+* 求打赏
+![原创不易](./doc/image/dashang.gif)
+
