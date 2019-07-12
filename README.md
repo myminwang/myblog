@@ -1,16 +1,12 @@
 ## Django搭建个人博客
 ![py3.6](https://img.shields.io/badge/Python-3.6-brightgreen.svg) 
   [![](https://img.shields.io/badge/Django-2.0-brightgreen.svg)]()
-[![](https://img.shields.io/badge/Powered%20by-@问道编程-blue.svg)](http://www.cnblogs.com/wendaobiancheng/)
 
 使用Django快速搭建博客
 ### 环境
 * Python: 3.X
 * Django: 2.0.x
 * MySQL
-
-### 示例博客：<http://www.mylanbitou.top>
-### 后台搭建教程及常见问题分析（计划中，暂未更新）：<http://www.zxdt.fun/article/p2/0/>
 
 ### 特点
 
