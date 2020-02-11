@@ -2,7 +2,7 @@ asn1crypto==0.24.0
 cffi==1.11.5
 cryptography==2.2.2
 diff-match-patch==20121119
-Django==2.0.7
+Django==2.2.10
 django-crispy-forms==1.7.2
 django-formtools==2.1
 django-import-export==1.0.1
