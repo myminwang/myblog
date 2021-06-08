@@ -15,7 +15,7 @@ Markdown==2.6.11
 odfpy==1.3.6
 olefile==0.45.1
 openpyxl==2.5.4
-Pillow==4.1.0
+Pillow==8.2.0
 pycparser==2.18
 PyMySQL==0.9.1
 pytz==2018.5
